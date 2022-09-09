@@ -36,7 +36,7 @@ http://localhost:3333/oauth/twitch/callback
 ```bash
 > git clone https://github.com/Streali/API.git
 > cd API
-> npm install
+> yarn install
 > docker compose up -d # and create the database
 > cp .env.example .env # and edit the value
 > node ace migration:run
