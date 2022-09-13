@@ -1,5 +1,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.get('/', () => ({ uptime: process.uptime() }))
+
 Route.get('/me', 'AuthController.me')
 Route.get('/auth/check', 'AuthController.check')
 Route.post('/auth/logout', 'AuthController.logout')
