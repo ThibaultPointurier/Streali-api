@@ -32,9 +32,7 @@ export default class AuthController {
 		})
 	}
 
-	public async logout({ auth, response }: HttpContextContract) {
-		await auth.logout()
-
-		return response.redirect().toPath('http://localhost:4200')
+	public async logout({ auth }: HttpContextContract) {
+		return await auth.logout()
 	}
 }

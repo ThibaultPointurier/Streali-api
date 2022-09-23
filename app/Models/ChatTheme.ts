@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import User from 'App/Models/User'
+import { ChatGlobal, ChatMessage, ChatName } from 'Types/chat';
 
 export default class ChatTheme extends BaseModel {
 	@column({ isPrimary: true })
@@ -16,81 +17,17 @@ export default class ChatTheme extends BaseModel {
 	public title: string
 
 	@column()
-	public global: Global
+	public global: ChatGlobal
 
 	@column()
-	public name: NameChat
+	public name: ChatName
 
 	@column()
-	public message: Message
+	public message: ChatMessage
 
 	@column()
 	public userId: string
 
 	@belongsTo(() => User)
 	public user: BelongsTo<typeof User>
-}
-
-export type Global = {
-	spaceBetweenMessages: number
-	align: 'left' | 'center' | 'right'
-	layout: 'stack' | 'inline'
-}
-
-export type NameChat = {
-	fullWidth: boolean
-	fontFamily: string
-	fontSize: string
-	textAlign: 'left' | 'center' | 'right'
-	textColor: string
-	backgroundColor: string
-	borderColor: string
-	borderWidth: number
-	padding: {
-		top: number
-		bottom: number
-		left: number
-		right: number
-	}
-	margin: {
-		top: number
-		bottom: number
-		left: number
-		right: number
-	}
-	borderRadius: {
-		topLeft: number
-		topRight: number
-		bottomRight: number
-		bottomLeft: number
-	}
-}
-
-export type Message = {
-	fullWidth: boolean
-	fontFamily: string
-	fontSize: string
-	textAlign: 'left' | 'center' | 'right'
-	textColor: string
-	backgroundColor: string
-	borderColor: string
-	borderWidth: number
-	padding: {
-		top: number
-		bottom: number
-		left: number
-		right: number
-	}
-	margin: {
-		top: number
-		bottom: number
-		left: number
-		right: number
-	}
-	borderRadius: {
-		topLeft: number
-		topRight: number
-		bottomRight: number
-		bottomLeft: number
-	}
 }
