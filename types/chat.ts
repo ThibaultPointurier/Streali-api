@@ -3,6 +3,7 @@ export type ChatGlobal = {
 	alignment: string
 	layout: string
 	order: ChatOrder
+	animation: string
 }
 
 export type ChatName = {

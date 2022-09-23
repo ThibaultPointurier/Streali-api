@@ -66,6 +66,7 @@ export const ChatGlobalSchema = schema.object().members({
 	alignment: schema.enum(['left', 'center', 'right']),
 	layout: schema.enum(['stack', 'inline']),
 	order: schema.array().members(ChatOrderSchema),
+	animation: schema.string(),
 })
 
 export const ChatNameSchema = schema.object().members({

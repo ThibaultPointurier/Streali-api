@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import User from 'App/Models/User'
-import { ChatGlobal, ChatMessage, ChatName } from 'Types/chat';
+import { ChatGlobal, ChatMessage, ChatName } from 'Types/chat'
 
 export default class ChatTheme extends BaseModel {
 	@column({ isPrimary: true })
