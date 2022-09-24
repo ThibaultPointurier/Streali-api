@@ -78,6 +78,7 @@ export const ChatNameSchema = schema.object().members({
 	padding: ChatMarginSchema,
 	radius: ChatRadiusSchema,
 	badges: ChatBadgeSchema,
+	full_width: schema.boolean(),
 })
 
 export const ChatMessageSchema = schema.object().members({
@@ -88,4 +89,5 @@ export const ChatMessageSchema = schema.object().members({
 	margin: ChatMarginSchema,
 	padding: ChatMarginSchema,
 	radius: ChatRadiusSchema,
+	full_width: schema.boolean(),
 })

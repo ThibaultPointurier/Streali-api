@@ -15,6 +15,7 @@ export type ChatName = {
 	padding: ChatMargin
 	radius: ChatBorderRadius
 	badges: ChatBadges
+	full_width: boolean
 }
 
 export type ChatMessage = {
@@ -25,6 +26,7 @@ export type ChatMessage = {
 	margin: ChatMargin
 	padding: ChatMargin
 	radius: ChatBorderRadius
+	full_width: boolean
 }
 
 export type ChatOrder = Array<{ id: string; name: string }>
