@@ -6,6 +6,8 @@ import {
 	ChatNameSchema,
 } from 'App/Validators/Constants/ChatSchema'
 
+export type ChatData = ChatValidator['schema']['props']
+
 export default class ChatValidator {
 	constructor(protected ctx: HttpContextContract) {}
 
