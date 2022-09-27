@@ -1,5 +1,5 @@
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import ChatValidator from 'App/Validators/ChatValidator'
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class ChatThemesController {
 	public async index({ auth }: HttpContextContract) {

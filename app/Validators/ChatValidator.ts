@@ -1,10 +1,10 @@
 import { CustomMessages, schema } from '@ioc:Adonis/Core/Validator'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import {
 	ChatGlobalSchema,
 	ChatMessageSchema,
 	ChatNameSchema,
 } from 'App/Validators/Constants/ChatSchema'
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export type ChatData = ChatValidator['schema']['props']
 

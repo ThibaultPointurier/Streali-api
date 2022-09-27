@@ -1,6 +1,6 @@
 import User from 'App/Models/User'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import SocialAuth from 'App/Services/SocialAuth'
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class AuthController {
 	public me({ auth, response }: HttpContextContract) {
