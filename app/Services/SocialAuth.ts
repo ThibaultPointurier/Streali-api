@@ -26,10 +26,8 @@ export default class SocialAuth implements Promise<void> {
 			{ oauthProviderId: this.socialUser.id, oauthProviderName: this.provider },
 			{
 				username:
-					this.socialUser.nickName ??
-					this.socialUser.name ??
-					this.socialUser.original.login ??
-					this.socialUser.email!.split('@')[0],
+					this.socialUser.nickName ?? this.socialUser.name ?? this.socialUser.email!.split('@')[0],
+				twitchUsername: this.socialUser.original.login,
 				email: this.socialUser.email!.toLowerCase(),
 				avatarUrl: this.socialUser.avatarUrl!,
 				oauthProviderId: this.socialUser.id,

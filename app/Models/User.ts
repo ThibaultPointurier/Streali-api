@@ -19,6 +19,9 @@ export default class User extends BaseModel {
 	public email: string
 
 	@column()
+	public twitchUsername: string
+
+	@column()
 	public avatarUrl: string
 
 	@column({ serializeAs: null })
