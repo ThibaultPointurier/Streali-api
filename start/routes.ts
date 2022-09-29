@@ -7,6 +7,7 @@ Route.get('/auth/check', 'AuthController.check')
 Route.post('/auth/logout', 'AuthController.logout')
 Route.get('/oauth/:provider/redirect', 'AuthController.redirect').where('provider', /twitch/)
 Route.get('/oauth/:provider/callback', 'AuthController.callback').where('provider', /twitch/)
+Route.post('/twitch/webhooks/events', 'TwitchWebhooksController.handleEvents')
 
 Route.group(() => {
 	Route.get('/chat-themes', 'ChatThemesController.index')

@@ -31,4 +31,7 @@ export default Env.rules({
 	PG_DB_NAME: Env.schema.string(),
 	TWITCH_CLIENT_ID: Env.schema.string(),
 	TWITCH_CLIENT_SECRET: Env.schema.string(),
+	TWITCH_APP_TOKEN: Env.schema.string(),
+	TWITCH_EVENTSUB_SECRET: Env.schema.string(),
+	TWITCH_EVENTSUB_CALLBACK_URL: Env.schema.string(),
 })

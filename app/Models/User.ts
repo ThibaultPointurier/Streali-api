@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 import { column, BaseModel, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import Event from 'App/Models/Event'
 import ChatTheme from 'App/Models/ChatTheme'
 
 export default class User extends BaseModel {
@@ -32,4 +33,7 @@ export default class User extends BaseModel {
 
 	@hasMany(() => ChatTheme)
 	public chatThemes: HasMany<typeof ChatTheme>
+
+	@hasMany(() => Event)
+	public events: HasMany<typeof Event>
 }

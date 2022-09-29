@@ -1,5 +1,6 @@
 import User from 'App/Models/User'
 import SocialAuth from 'App/Services/SocialAuth'
+import { Twitch } from 'App/Services/Twitch'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class AuthController {
@@ -27,6 +28,11 @@ export default class AuthController {
 		// @ts-ignore
 		await new SocialAuth(socialUser, params.provider).onFindOrCreate(async (user: User) => {
 			await auth.login(user)
+
+			if (user.$isLocal) {
+				const twitch = new Twitch(user.oauthProviderId)
+				await twitch.setupWebhooks()
+			}
 
 			response.redirect().toPath('http://localhost:4200')
 		})
