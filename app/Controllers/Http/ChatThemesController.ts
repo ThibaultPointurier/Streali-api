@@ -1,5 +1,6 @@
 import ChatValidator from 'App/Validators/ChatValidator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import ChatTheme from 'App/Models/ChatTheme'
 
 export default class ChatThemesController {
 	public async index({ auth }: HttpContextContract) {
@@ -8,13 +9,8 @@ export default class ChatThemesController {
 		return auth.user!.chatThemes
 	}
 
-	public show({ auth, params }: HttpContextContract) {
-		return auth
-			.user!.related('chatThemes')
-			.query()
-			.preload('user', (q) => q.select('username'))
-			.where('id', params.id)
-			.firstOrFail()
+	public async show({ params }: HttpContextContract) {
+		return await ChatTheme.query().where('id', params.id).preload('user').firstOrFail()
 	}
 
 	public async store({ auth, request }: HttpContextContract) {

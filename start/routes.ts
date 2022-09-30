@@ -12,7 +12,11 @@ Route.post('/twitch/webhooks/events', 'TwitchWebhooksController.handleEvents')
 Route.group(() => {
 	Route.get('/chat-themes', 'ChatThemesController.index')
 	Route.post('/chat-themes', 'ChatThemesController.store')
-	Route.get('/chat-themes/:id', 'ChatThemesController.show')
 	Route.put('/chat-themes/:id', 'ChatThemesController.update')
 	Route.delete('/chat-themes/:id', 'ChatThemesController.destroy')
 }).middleware('auth')
+
+//Embed
+Route.group(() => {
+	Route.get('/chat-themes/:id', 'ChatThemesController.show')
+})
